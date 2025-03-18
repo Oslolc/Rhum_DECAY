@@ -10,16 +10,16 @@ Lancer l'app :
  - taper dans le terminal : node app.js -> marche si : Serveur lancé sur le port 5000 | MongoDB Connected
 
 Créer un utilisateur (register) :
-    - dans Postman : Post || http://localhost:5000/api/auth/register
-    - dans body || raw, entrer : {
+  - dans Postman : Post || http://localhost:5000/api/auth/register
+  - dans body || raw, entrer : {
                                     "name": "Example User",
                                     "email": "test@example.com",
                                     "password": "password"
                                 }
 
 Se connecter en tant qu'utilisateur (login) :       (ERREUR : ne fonctionne pas pour l'instant)
-    dans Postman : Post || http://localhost:5000/api/auth/login
-    dans body || raw, entrer : {
-                                "email": "mathis.decay@gmail.com",
-                                "password": "Rsq536kc"
-                            }
+   - dans Postman : Post || http://localhost:5000/api/auth/login
+   - dans body || raw, entrer : {
+                                    "email": "mathis.decay@gmail.com",
+                                    "password": "Rsq536kc"
+                                }
