@@ -32,14 +32,14 @@ exports.login = async (req, res) => {
     console.log("🔹 Utilisateur trouvé :", user);
 
     if (!user) {
-        console.log("❌ Utilisateur non trouvé :", email);
+        console.log("Utilisateur non trouvé :", email);
         return res.status(400).json({ message: 'Email ou mot de passe incorrect' });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     console.log("🔹 Mot de passe correct ?", isMatch);
     if (!isMatch) {
-        console.log("❌ Mot de passe incorrect pour :", email);
+        console.log("Mot de passe incorrect pour :", email);
         return res.status(400).json({ message: 'Email ou mot de passe incorrect' });
     }
 
@@ -47,9 +47,10 @@ exports.login = async (req, res) => {
 
     console.log("✅ Connexion réussie pour :", email);
 
-    res.json({ token, user: { id: user._id, name, email } });
+    res.json({token, user: {id: user._id, name: user.name, email: user.email}});
+  
   } catch (error) {
-    console.error("❌ Erreur dans loginUser :", error.message);
+    console.error("Erreur dans loginUser :", error.message);
     res.status(500).json({ message: 'Erreur serveur' });
   }
 };
