@@ -20,3 +20,34 @@ exports.createRecipe = async (req, res) => {
     res.status(500).json({ message: "Erreur serveur" });
   }
 };
+
+exports.getRecipes = async (req, res) => {
+  try {
+      const { page = 1, limit = 10 } = req.query;
+      const recipes = await Recipe.find()
+          .populate('rhum', 'name')
+          .populate('ingredients', 'name')
+          .skip((page - 1) * limit)
+          .limit(parseInt(limit));
+
+      res.json(recipes);
+  } catch (error) {
+      res.status(500).json({ message: 'Erreur serveur', error: error.message });
+  }
+};
+
+
+exports.searchRecipes = async (req, res) => {
+  try {
+      const { name } = req.query;
+      if (!name) return res.status(400).json({ message: "Veuillez fournir un nom" });
+
+      const recipes = await Recipe.find({ name: new RegExp(name, 'i') })
+          .populate('rhum', 'name')
+          .populate('ingredients', 'name');
+
+      res.json(recipes);
+  } catch (error) {
+      res.status(500).json({ message: 'Erreur serveur', error: error.message });
+  }
+};

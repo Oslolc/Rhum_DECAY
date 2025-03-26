@@ -1,8 +1,9 @@
-const express = require("express");
-const { createRecipe } = require("../controllers/recipeController");
-const authMiddleware = require("../middleware/authMiddleware");
+const express = require('express');
+const { createRecipe, getRecipes, searchRecipes } = require('../controllers/recipeController');
 const router = express.Router();
 
-router.post("/", authMiddleware, createRecipe);
+router.post('/', createRecipe);
+router.get('/', getRecipes);
+router.get('/search', searchRecipes);
 
 module.exports = router;
