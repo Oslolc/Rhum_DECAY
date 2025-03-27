@@ -25,7 +25,7 @@ Se connecter en tant qu'utilisateur (login) :
 
 Ajouter un ingrédient :
   - dans Postman : Post || http://localhost:5000/api/ingredients || Authorization, Bearer Token, {Token} (obtenu avec le login)
-  - dans body ||raw, entrer : {
+  - dans body || raw, entrer : {
                                 "name": "nom de l'ingrédient",
                                 "type": "type d'ingrédient",
                                 "storeAddress": "adresse d'un magasin",
@@ -50,7 +50,7 @@ Rechercher un rhum :
 
 Ajouter une recette :
   - dans Postman : Post || http://localhost:5000/api/recipes || Authorization, Bearer Token, {Token} (obtenu avec le login)
-  - dans body ||raw, entrer : {
+  - dans body || raw, entrer : {
                                 "name": "nom de la recette",
                                 "rum": "id du rhum",  
                                 "ingredients": [
@@ -58,5 +58,27 @@ Ajouter une recette :
                                     { "ingredient": "id du 2ème ingrédient", "quantity": "quantité" }
                                 ],
                                 "instructions": "explication de la préparation de la recette",
+                                "visibility": "public || private"
+                                }
+
+Lister les recettes :
+  - dans Postman : Get || http://localhost:5000/api/recipes?page=1&limit=5
+
+Rechercher une recette par nom :
+  - dans Postman : Get || http://localhost:5000/api/recipes/search?name=Vanille
+  après search? : mettre les filtres que vous voulez pour votre recherche
+
+Lister mes recettes publiques :
+  - dans Postman : Get || http://localhost:5000/api/recipes/public?page=1&limit=5
+
+Modifier une recette :
+  - dans Postman : Put || http://localhost:5000/api/recipes/{ID_DE_LA_RECETTE}
+  - dans body || raw, entrer : {
+                                "name": "nom de la nouvelle recette",
+                                "ingredients": [
+                                  { "ingredient": "id de l'ingrédient 1", "quantity": "nouvelle quantité" },
+                                  { "ingredient": "id de l'ingrédient 2", "quantity": "nouvelle quantité" }
+                                ],
+                                "instructions": "nouvelles instructions",
                                 "visibility": "public || private"
                                 }
