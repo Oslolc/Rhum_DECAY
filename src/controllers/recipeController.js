@@ -1,6 +1,7 @@
 const Recipe = require("../models/recipe");
 
 exports.createRecipe = async (req, res) => {
+  console.log("controller")
   try {
     const { name, rum, ingredients, instructions, visibility } = req.body;
 

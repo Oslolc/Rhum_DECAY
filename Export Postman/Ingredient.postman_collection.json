@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "3788e30d-cfb4-405f-bebb-6003fe4bc78d",
+		"name": "Ingredient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43195033"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/ingredients",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDkzNDAxNzcxMzQ0YjczYzVlZTA3NiIsImlhdCI6MTc0MjgwNjMwMiwiZXhwIjoxNzQzNDExMTAyfQ.hgDDChemQOG1O8PSNr567o8uL3WtxD0f9N89ROmGGVk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Vanille Bourbon\",\r\n  \"type\": \"épices\",\r\n  \"storeAddress\": \"10 rue des épices, Paris\",\r\n  \"price\": 5.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ingredients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ingredients"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

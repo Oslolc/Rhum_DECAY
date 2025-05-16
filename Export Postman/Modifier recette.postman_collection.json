@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "dc437ecc-f4be-42e3-b944-6e496f92ca9a",
+		"name": "Modifier recette",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43195033"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/recipes/{ID_DE_LA_RECETTE}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

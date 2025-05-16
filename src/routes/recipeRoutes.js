@@ -3,7 +3,9 @@ const { createRecipe, getRecipes, searchRecipes, getPublicRecipes, updateRecipe 
 const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
 
-router.post('/', createRecipe);
+console.log("Routes")
+
+router.post('/', authMiddleware, createRecipe);
 router.get('/', getRecipes);
 router.get('/search', searchRecipes);
 router.get('/public', getPublicRecipes);

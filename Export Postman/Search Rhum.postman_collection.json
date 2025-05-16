@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "f969458f-0759-4adb-83fb-829a56ba6010",
+		"name": "Search Rhum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43195033"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/rhums/search?name=2010&type=Rhum&pays=Marie Galante",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
