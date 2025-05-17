@@ -1,3 +1,7 @@
+import helmet from "helmet";
+
+app.use(helmet());
+
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
